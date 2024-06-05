@@ -1,4 +1,5 @@
 import java.lang.annotation.Target;
+import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
@@ -24,6 +25,7 @@ public class Principal {
                 9 - Salir
                 *******************************************
                 """);
+
             opcion=teclado.nextInt();
 
             System.out.println("Cantidad de dollares a transformar");
@@ -59,7 +61,7 @@ public class Principal {
                 monedas = conversor.convertirMonedas(base,target,cantidad);
                 System.out.println("\n" + "***** "+ cantidad + " " + base +" son "+ monedas.conversion_result () + " " + target + " *****" +"\n");
             }catch (Exception e){
-                System.out.println("\n"+"!ERROR¡ verifica que tu seleccion sea correcta");
+                System.out.println("\n"+"!ERROR¡ verifica que tu seleccion sea correcta" +"\n");
             }
         }
     }
