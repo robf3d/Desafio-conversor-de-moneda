@@ -10,32 +10,56 @@ public class Principal {
         int opcion = 0;
 
         while (opcion != 9){
-            String base;
-            String target;
+            String base = "";
+            String target = "";
+            Monedas monedas;
 
             System.out.println("""
-                *****Elija la opcion deseada*****
-                1 - Dollar USA a Euro
+                **********Elija la opcion deseada**********
+                1 - Dollar USA a Peso argentino
+                2 - Dollar USA a Boliviano boliviano
+                3 - Dollar USA a Peso chileno
+                4 - Dollar USA a Real brasileño
+                5 - Dollar USA a Peso colombiano
                 9 - Salir
+                *******************************************
                 """);
             opcion=teclado.nextInt();
-            
-            Monedas monedas;
+
+            System.out.println("Cantidad de dollares a transformar");
+            int cantidad = teclado.nextInt();
+
             switch (opcion){
-                case 1:
+                case 1 :
                     base = "USD";
-                    target="EUR";
-                    monedas = conversor.convertirMonedas(base,target);
-                    System.out.println(monedas.conversion_result());
+                    target="ARS";
                     break;
 
                 case 2:
-                    base = "GBP";
-                    target="EUR";
-                    monedas = conversor.convertirMonedas(base,target);
-                    System.out.println(monedas.conversion_result());
+                    base = "USD";
+                    target="BOB";
                     break;
 
+                case 3:
+                    base = "USD";
+                    target="CLP";
+                    break;
+
+                case 4:
+                    base = "USD";
+                    target="BLP";
+                    break;
+                case 5:
+                    base = "USD";
+                    target="COP";
+                    break;
+            }
+
+            try{
+                monedas = conversor.convertirMonedas(base,target,cantidad);
+                System.out.println("\n" + "***** "+ cantidad + " " + base +" son "+ monedas.conversion_result () + " " + target + " *****" +"\n");
+            }catch (Exception e){
+                System.out.println("\n"+"!ERROR¡ verifica que tu seleccion sea correcta");
             }
         }
     }

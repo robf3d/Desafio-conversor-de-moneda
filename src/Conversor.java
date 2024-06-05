@@ -9,11 +9,11 @@ import java.net.http.HttpResponse;
 public class Conversor {
 
 
-    public Monedas convertirMonedas (String base, String target) {
+    public Monedas convertirMonedas (String base, String target, double cantidad) {
         URI direccion = URI.create("https://v6.exchangerate-api.com/v6/ba9261901ad12c7936841ba5/pair/" +
                 base + "/" +
                 target + "/" +
-                "10");
+                cantidad);
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
