@@ -17,4 +17,5 @@ Despues de seleccionar un tipo de conversion le pedira que digite la cantidad de
 
 
 Al finalizar se mostrara un texto con la cantidad convertida en la divisa seleccionada
+
 ![resultado](https://github.com/robf3d/Desafio-conversor-de-moneda/assets/157214344/b45ad98a-45b1-45da-a47f-162879bf651f)
